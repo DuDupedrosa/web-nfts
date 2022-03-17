@@ -1,0 +1,381 @@
+/* inicio do footer */
+.footer-start {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 3.75rem;
+}
+
+/* link do inicio do footer que retorna para a home */
+.footer-start-link-top a {
+  padding: 1.75rem;
+  background-color: var(--background-2);
+}
+
+/* estilo para gerar o separador */
+.footer-start-bg {
+  border-bottom: 0.0625rem solid var(--background-5);
+}
+
+/* inicia os estilos da segunda parte do footer */
+
+/* estilos do form title */
+.footer-information-send-email h2 {
+  max-width: 21.875rem;
+  font-weight: 500;
+  font-size: var(--size-7);
+  line-height: 1.23;
+  margin-bottom: 1.5625rem;
+}
+
+/* flutuação do form 
+   input com o button */
+#form-email {
+  display: flex;
+  align-items: center;
+}
+
+/* estilos do input */
+.form-input-email {
+  max-width: max-content;
+  flex: 1;
+}
+
+.form-input-email input {
+  padding: 1.25rem 1.5625rem 1.25rem 1.25rem;
+  background-color: var(--background-7);
+  color: var(--color-4);
+  font-weight: 400;
+  font-size: var(--size-5);
+  border: 0.0625rem solid transparent;
+}
+
+.form-input-email input:focus {
+  outline: none;
+  border-color: var(--background-2);
+}
+
+/* estilos do button */
+.form-email-button {
+  font-weight: 700;
+  font-size: var(--size-5);
+  color: var(--color-3);
+  padding: 1.25rem 1.625rem 1.25rem 1.5625rem;
+  border: none;
+  background-color: var(--background-1);
+  cursor: pointer;
+  transition: 0.3s;
+  max-width: max-content;
+  flex: 1;
+}
+
+.form-email-button:hover {
+  background-color: var(--background-2);
+}
+
+.form-input-email {
+  position: relative;
+}
+
+/* estilos da mensagem de erro que vai aparecer
+   somente quando o email não der match com a regexp
+   que foi criada via javascript, importante salientar
+   que o span deve começar com display none e somente
+   ser visível quando a caixa que o segura contiver
+   a classe de active-erro, isso é feito a partir
+   do nosso JavaScript */
+.erro {
+  position: absolute;
+  left: 0;
+  bottom: -2.5rem;
+  color: var(--color-3);
+  background-color: var(--background-2);
+  font-size: var(--size-3);
+  padding: 0.2rem 0.4rem;
+  border-radius: 0 0.3125rem 0.3125rem 0.3125rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  display: none;
+}
+
+.erro::before {
+  content: "";
+  display: block;
+  width: 0.125rem;
+  height: 0.125rem;
+  border-left: 0.625rem solid transparent;
+  border-right: 0.625rem solid transparent;
+  border-bottom: 0.625rem solid var(--background-2);
+  position: absolute;
+  top: -0.75rem;
+  left: 0px;
+}
+
+/* interações com o script para funcionar
+   a visibilidade so span de erro no momento
+   certo */
+@keyframes show-erro {
+  from {
+    opacity: 0;
+    transform: translate3d(-40px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+[data-email].active-erro .erro {
+  display: block;
+  animation: show-erro 0.8s forwards;
+}
+
+/* flutuação entre as duas caixas a primeira
+   que segura o form e a segunda que segura as 
+   caixas que contém as listas com os links
+   de mais informações */
+.footer-information {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+/* footer-information estilos dos títulos de cada box */
+.footer-information-content h2 {
+  font-weight: 700;
+  font-size: var(--size-5);
+  margin-bottom: 0.5rem;
+}
+
+/* estilos do link de cada box */
+.footer-information-list li + li {
+  margin-top: 1rem;
+}
+
+.footer-information-list li a {
+  font-weight: 400;
+  font-size: var(--size-5);
+  transition: 0.3s;
+}
+
+.footer-information-list li a:hover {
+  color: var(--color-2);
+}
+
+/* flutuação interna de cada box que segura os links
+   de mais informações */
+.footer-information-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* gerando o separador na caixa que segura
+   os conteúdos de mais informações */
+.footer-information-content::before {
+  content: "";
+  display: inline-block;
+  width: 0.0625rem;
+  height: 20rem;
+  background-color: var(--background-5);
+}
+
+/* entra os estilos para dar o distanciamento do topo
+   sem afetar a posição do separador, por isso demos o
+   padding em cada elemento, pois dessa aforma não afetamos
+   a distancia da caixa pai que gera o separador */
+.footer-information-send-email {
+  padding-top: 4.1875rem;
+}
+
+.footer-information-empresa,
+.footer-information-mapa,
+.footer-information-links {
+  padding-top: 4.625rem;
+}
+
+/* gerando o ultimo separador na caixa pai de todas
+   para separar o ultimo box do footer do penúltimo */
+.footer-information-bg {
+  border-bottom: 0.0625rem solid var(--background-5);
+}
+
+/* começa os estilos da ultima box do footer geral */
+
+/* flutuação principal do footer-end */
+.footer-end {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 4.25rem 0 3.8125rem 0;
+}
+
+/* footer end link */
+.footer-end-link a {
+  font-weight: 400;
+  font-size: var(--size-5);
+  color: var(--color-4);
+  padding: 0.8rem 0;
+  transition: 0.3s;
+}
+
+.footer-end-link a:hover {
+  color: var(--color-2);
+}
+
+/* footer socials medias */
+.footer-end-socials {
+  display: flex;
+  gap: 3.125rem;
+  align-items: center;
+}
+
+@media (max-width: 63.75rem) {
+  /* quebra para um coluna somente entre
+     a parte do form e a as caixas que 
+     seguram as listas de links */
+  .footer-information {
+    grid-template-columns: 1fr;
+  }
+
+  /* tirando o separador lateral pois
+     não faz mais sentido */
+  .footer-information-content::before {
+    display: none;
+  }
+
+  /* construindo três colunas para facilitar
+     o alinhamento das caixas que seguram as 
+     listas de link */
+  .footer-information-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    position: relative;
+    padding-bottom: 2.5rem;
+  }
+
+  /* na caixa que segura as caixas com as listas
+     de links, criamos um separador com o border-top.
+     foi necessário retirar o padding da container
+     para o separador pegar, de ponta a ponta, 
+     por isso damos padding lateral em cada item, 
+     para voltar ao alinhamento inicial, mas permitindo
+     que o border pegue de ponta a ponta */
+  .footer-information-content::before {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 0.0625rem;
+    background-color: var(--background-5);
+    position: absolute;
+    top: 2.5rem;
+  }
+
+  .footer-information {
+    padding: 0;
+  }
+
+  .footer-information-send-email {
+    padding-left: 1.25rem;
+  }
+
+  .footer-information-empresa {
+    padding-left: 1.25rem;
+  }
+
+  .footer-end {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+@media (max-width: 37.5rem) {
+  /* quebra para duas colunas na parte das caixas
+     que seguram os links */
+  .footer-information-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* colocando o padding left para voltar
+     ao alinhamento do layout */
+  .footer-information-links {
+    padding-left: 1.25rem;
+  }
+
+  /* quebrando a ultima parte do footer
+     para uma coluna e alinhando tudo ao centro */
+  .footer-end {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* reduzindo o tamanho do link que retorna
+     ao topo da página */
+  .footer-start-link-top a {
+    padding: 1.25rem;
+  }
+
+  /* ajustes no tamanho do input e do button
+     pois são proporcionais */
+  .form-input-email input {
+    padding: 1rem 1.5625rem 1rem 1.25rem;
+    font-size: var(--size-3);
+  }
+
+  .form-email-button {
+    font-size: var(--size-3);
+    padding: 1rem 1.625rem 1rem 1.5625rem;
+  }
+
+  /* responsivo da mensagem de erro
+   que aparece no input de email */
+  .erro {
+    bottom: -1.875rem;
+    font-size: 0.625rem;
+  }
+
+  .erro::before {
+    top: -0.5625rem;
+    left: 0px;
+    border-left: 0.5rem solid transparent;
+    border-right: 0.5rem solid transparent;
+    border-bottom: 0.5rem solid var(--background-2);
+  }
+}
+
+/* ultimo ponto de quebra para ajustar 
+   o tamanho dos itens */
+@media (max-width: 28.75rem) {
+  /* reduzindo o tamanho da imagem para
+     não colocar com o link que redireciona
+     para o topo da página */
+  .footer-star-logo a img {
+    width: 11.25rem;
+  }
+
+  /* reduzindo o tamanho do link
+     pois estava muito grande para
+     as dimensões da tela */
+  .footer-start-link-top a {
+    padding: 0.75rem;
+  }
+
+  /* reduzindo o tamanho do input */
+  .form-input-email input {
+    width: 11.875rem;
+  }
+
+  /* reduzindo o tamanho do button */
+  .form-email-button {
+    font-size: var(--size-3);
+    padding: 1rem;
+  }
+
+  /* ajuste para o h2 do form ficar
+     em proporção ao tamanho do input */
+  .footer-information-send-email h2 {
+    font-size: var(--size-6);
+  }
+}

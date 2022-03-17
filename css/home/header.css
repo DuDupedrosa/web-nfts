@@ -1,0 +1,175 @@
+/* itens que já começam com display none
+   pois só são ativados no responsivo  */
+.menu-hamburguer {
+  display: none;
+}
+
+.nav-main-itens-link-home {
+  display: none;
+}
+
+/* flutuação geral */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 3.75rem 1.25rem 0 1.25rem;
+}
+
+/* estilos-da-navegação */
+.nav-main-itens {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.75rem;
+}
+
+.nav-main-itens li a {
+  font-weight: 400;
+  font-size: var(--size-4);
+  transition: 0.3s;
+}
+
+.comprar-span {
+  text-transform: uppercase;
+}
+
+.faq-link {
+  text-transform: uppercase;
+}
+
+.nav-main-itens li a:hover {
+  color: var(--color-2);
+}
+
+/* estilos-link-carteira */
+.header-link-connect a {
+  font-weight: 700;
+  font-size: var(--size-3);
+  display: flex;
+  align-items: center;
+  padding: 0.9375rem 1.375rem;
+  background-color: var(--background-1);
+  border-radius: 0.25rem;
+  transition: 0.4s;
+  gap: 1rem;
+}
+
+.header-link-connect a:hover {
+  background-color: var(--background-2);
+}
+
+/* começa o responsivo */
+@media (max-width: 59.125rem) {
+  /* tirando o ícone da logo */
+  .header-logo {
+    display: none;
+  }
+
+  /* estilos do menu hambúrguer */
+  .menu-hamburguer {
+    display: block;
+    margin-left: 1.25rem;
+    cursor: pointer;
+    padding: 1rem 0.4rem 1rem 0;
+    max-width: max-content;
+  }
+
+  /* ativando o link que leva para a home */
+  .nav-main-itens-link-home {
+    display: block;
+  }
+
+  /* estilos da lista responsiva */
+  .nav-main-itens {
+    display: block;
+  }
+
+  .header {
+    display: grid;
+    justify-content: stretch;
+    align-items: center;
+    grid-template-columns: auto auto;
+    gap: 2rem;
+  }
+
+  /* alteração na container para o background
+     pegar toda a tela */
+  .container-response {
+    max-width: 100%;
+    margin: 0;
+    padding: 3.75rem 0 0 0;
+  }
+
+  .nav-main {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    background-color: var(--background-4);
+  }
+
+  .nav-main-itens li a {
+    padding: 1.25rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: var(--size-5);
+  }
+
+  .nav-main-itens li a::before {
+    content: "";
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.25rem;
+    background-color: var(--background-2);
+  }
+
+  .nav-main-itens li {
+    border-bottom: 0.125rem solid var(--background-2);
+  }
+
+  /* estilos do botão que leva para a aba de carteira */
+  .header-link-connect {
+    max-width: max-content;
+    justify-self: end;
+    margin-right: 1.25rem;
+  }
+
+  /* estilos para funcionar o JavaScript */
+  [data-menu="nav"] {
+    display: none;
+    transition: 0.3s;
+  }
+
+  @keyframes show-menu {
+    from {
+      opacity: 0;
+      transform: translate3d(0, -40px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  [data-menu="nav"].active-menu {
+    display: block;
+    animation: show-menu 0.7s forwards;
+  }
+}
+
+/* ultima quebra do header */
+@media (max-width: 37.5rem) {
+  /* diminuindo o tamanho do botão connect */
+  .header-link-connect a {
+    padding: 0.625rem 1.125rem;
+    gap: 1rem;
+    font-size: var(--size-2);
+  }
+
+  .header-link-connect a img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}

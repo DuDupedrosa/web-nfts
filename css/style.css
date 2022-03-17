@@ -1,0 +1,21 @@
+/* css geral */
+@import url(./global/reset.css);
+@import url(./global/variables.css);
+@import url(./global/utility.css);
+
+/* estilos da home */
+@import url(./home/header.css);
+
+/* home-introduction */
+@import url(./home/introduction/intro-start.css);
+@import url(./home/introduction/intro-galeria.css);
+@import url(./home/introduction/intro-end.css);
+
+/* home-famous's week */
+@import url(./home/famous-of-week/famous-of-week.css);
+
+/* home-bests artists */
+@import url(./home/best-artists/bests-artists.css);
+
+/* footer */
+@import url(./home/footer.css);

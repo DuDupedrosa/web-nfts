@@ -1,0 +1,140 @@
+/* caixa pai que segura todas as outras */
+.best-artists {
+  padding-bottom: 8.75rem;
+}
+
+/* estilo do titulo principal da section */
+.best-artists h1 {
+  text-align: center;
+  font-size: var(--size-9);
+  margin-bottom: 7.5rem;
+  font-weight: 700;
+  line-height: 1.22;
+}
+/* responsivo do titulo, mantendo o padrão
+   do site, sempre menor que 600px o size
+   cei para 40px */
+@media (max-width: 37.5rem) {
+  .best-artists h1 {
+    font-size: var(--size-8);
+    margin-bottom: 6.25rem;
+  }
+}
+
+/* começa os estilos de cada
+   box, de cada artista */
+.best-artists-itens li a {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  background-color: var(--background-6);
+  max-width: max-content;
+  padding: 1.5625rem 1.0625rem 1.5625rem 2rem;
+  transition: 0.4s;
+}
+
+.best-artists-itens li a:hover {
+  background-color: var(--background-2);
+}
+
+.best-artists-itens li a:hover span {
+  color: var(--color-1);
+}
+
+/* define o tamanho da imagem
+   pois foi exportada com 2x por conta
+   da qualidade, então teve que ajustar
+   o tamanho */
+.best-artists-itens-img img {
+  width: 6.25rem;
+  height: auto;
+}
+
+/* estilo do h2 de cada box (name) */
+.best-artists-itens-text h2 {
+  font-weight: 500;
+  font-size: var(--size-5);
+  margin-bottom: 0.625rem;
+  text-transform: capitalize;
+}
+
+/* estilo da legenda da fotografia de cada artista */
+.best-artists-itens-text span {
+  font-weight: 500;
+  font-size: var(--size-5);
+  text-transform: capitalize;
+}
+
+/* grid utilizado para construir
+   o layout de cada box */
+.best-artists-itens {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6.875rem;
+}
+
+/* primeira quebra, caindo para duas colunas,
+   para segurar a quebra até 800px.
+   A PARTIR DESSE PONTO O ALINHAMENTO
+   SEMPRE SERÁ AO CENTRO. Para tornar
+   o layout mais agradável */
+@media (max-width: 70rem) {
+  .best-artists-itens {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.75rem 0;
+    justify-items: center;
+  }
+}
+
+/* ultima quebra de coluna
+   colando tudo em uma unica */
+@media (max-width: 50rem) {
+  .best-artists-itens {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* diminuindo o size do h2 e do span
+   pois estava esmagando as imagens,
+   diminuindo um pouco tamanho já foi
+   resolvido o problema */
+@media (max-width: 25rem) {
+  .best-artists-itens-text h2 {
+    font-size: var(--size-3);
+  }
+
+  .best-artists-itens-text span {
+    font-size: var(--size-3);
+  }
+}
+
+/* estilos do link de saiba mais */
+
+/* buscando sempre o alinhamento ao centro
+   por isso o uso do display grid */
+.see-more {
+  display: grid;
+  place-items: center;
+  margin-top: 4rem;
+}
+
+/* estilos do link */
+.see-more a {
+  display: flex;
+  align-items: center;
+  gap: 0.8125rem;
+  padding: 0.8rem 0;
+  max-width: max-content;
+}
+
+/* entra os estilos do span
+   o texto do link */
+.see-more a span {
+  font-weight: 400;
+  font-size: var(--size-5);
+}
+
+.see-more a:hover span {
+  color: var(--color-2);
+}

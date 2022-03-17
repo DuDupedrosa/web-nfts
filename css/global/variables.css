@@ -1,0 +1,30 @@
+:root {
+  /* font-family */
+  --family-1: "Montserrat", sans-serif;
+
+  /* colors */
+  --color-1: #ffffff;
+  --color-2: #ff5b50;
+  --color-3: #000000;
+  --color-4: #5a5757;
+
+  /* background-colors */
+  --background-1: #ffffff;
+  --background-2: #ff5b50;
+  --background-3: #000000;
+  --background-4: #111111;
+  --background-5: #5a5757;
+  --background-6: #252525;
+  --background-7: #0d0d0d;
+
+  /* font-sizes */
+  --size-1: 0.75rem; /* 12px */
+  --size-2: 0.875rem; /* 14px */
+  --size-3: 1rem; /* 16px */
+  --size-4: 1.125rem; /* 18px */
+  --size-5: 1.25rem; /* 20px */
+  --size-6: 1.5rem; /* 24px */
+  --size-7: 2rem; /* 32px */
+  --size-8: 2.5rem; /* 40px */
+  --size-9: 3.125rem; /* 50px */
+}

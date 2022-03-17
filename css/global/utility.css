@@ -1,0 +1,65 @@
+/* background-global-home */
+#body-home {
+  background-color: var(--background-3);
+}
+
+/* background-geral-da-intro */
+.intro-background {
+  background-image: url(../../img/background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* mudando o background no responsivo pois
+   a baixo desse valor, a imagem fica totalmente
+   quebrada, então colocamos uma cor uma em todo
+   a intro */
+@media (max-width: 59.125rem) {
+  .intro-background {
+    background: var(--background-3);
+  }
+}
+
+/* container */
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  box-sizing: border-box;
+}
+
+.family-1 {
+  font-family: var(--family-1);
+}
+
+/* colors */
+
+.color-1 {
+  color: var(--color-1);
+}
+
+.color-2 {
+  color: var(--color-2);
+}
+
+.color-3 {
+  color: var(--color-3);
+}
+
+.color-4 {
+  color: var(--color-4);
+}
+
+/* background-colors */
+
+.background-1 {
+  background-color: var(--background-1);
+}
+
+.background-2 {
+  background-color: var(--background-2);
+}
+
+.background-3 {
+  background-color: var(--background-3);
+}

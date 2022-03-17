@@ -1,0 +1,114 @@
+/* title da section */
+.famous-week h1 {
+  font-weight: 700;
+  font-size: var(--size-9);
+  line-height: 1.22;
+  padding-bottom: 10rem;
+}
+
+/* flutuação geral das box */
+.famous-week-flutuation {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.75rem 0;
+  position: relative;
+  margin-bottom: 9.375rem;
+}
+
+/*  colocando as ultimas caixas sempre
+    ao final da coluna  */
+.astronauta-2,
+.astronauta-4 {
+  justify-self: end;
+}
+
+/* estilos para gerar o separador entre cada coluna */
+.famous-week-flutuation::before {
+  content: "";
+  display: inline-block;
+  width: 0.0625rem;
+  height: 100%;
+  background-color: var(--background-5);
+  position: absolute;
+  right: 50%;
+}
+
+/* container interna para cada box
+   para que o elemento nunca cresça 
+   o máximo possível e sim respeite 
+   o tamanho definido */
+.container-inter-astronauta {
+  max-width: 23.5rem;
+  box-sizing: border-box;
+}
+
+/* estilos do astronauta intro / astronauta-number + arrow */
+.astronauta-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 2.75rem;
+}
+
+.astronauta-title span {
+  font-weight: 500;
+  font-size: var(--size-7);
+}
+
+/* estilos do astronauta name / name + rkt + img */
+.astronauta-name {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 1.625rem 0;
+}
+
+/* imagem sempre pegando as duas colunas */
+.astronauta-name img {
+  grid-row: 2;
+  grid-column: 1 / -1;
+}
+
+.astronauta-name h2 {
+  font-weight: 600;
+  font-size: var(--size-5);
+  text-transform: capitalize;
+}
+
+.astronauta-name span {
+  font-weight: 400;
+  font-size: var(--size-5);
+  text-transform: uppercase;
+}
+
+/* reponsivo da section onde ocorre
+   a quebra para um coluna e alinhamento
+   dos itens passa a ser central */
+@media (max-width: 59.125rem) {
+  /* retirando o separador / não faz mais sentido */
+  .famous-week-flutuation::before {
+    display: none;
+  }
+
+  /* quebra para uma coluna */
+  .famous-week-flutuation {
+    grid-template-columns: 1fr;
+    gap: 4rem 0;
+    justify-items: center;
+  }
+
+  .astronauta-2,
+  .astronauta-4 {
+    justify-self: center;
+  }
+}
+
+/* ultima quebra para manter o padrão 
+   do responsivo onde todos os títulos
+   menor que 600px tem 40px de size */
+@media (max-width: 37.5rem) {
+  .famous-week h1 {
+    font-size: var(--size-8);
+    padding-bottom: 6.25rem;
+  }
+}

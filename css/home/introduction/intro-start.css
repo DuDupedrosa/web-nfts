@@ -1,0 +1,137 @@
+/* flutuação-geral entre a primeira caixa
+  e a imagem da arte */
+.intro-start {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 2.5rem;
+  padding-bottom: 6.25rem;
+  padding-top: 5.625rem;
+}
+
+/* estilos do paragrafo */
+.intro-start-text div > p {
+  font-weight: 400;
+  font-size: var(--size-4);
+  line-height: 1.22;
+  max-width: 25rem;
+  padding-bottom: 3.4375rem;
+}
+
+.intro-text-span-1 {
+  text-transform: uppercase;
+}
+
+/* estilos do title */
+.intro-start-text h1 {
+  font-weight: 700;
+  font-size: var(--size-9);
+  line-height: 1.22;
+  max-width: 37.25rem;
+}
+
+/* flutuação interna entre o paragrafo/imagens com
+   o titulo principal  */
+.intro-start-text {
+  display: flex;
+  gap: 4.5rem;
+}
+
+/* estilos das imagens dos avatares */
+.intro-start-imgs li img {
+  max-width: 5.9375rem;
+}
+
+.intro-start-imgs {
+  display: flex;
+}
+/* alteração no eixo z das imagens para
+   poder gerar o efeito de imagem sobre
+   imagem, juntamento com a manipulação através 
+   do margin negativo */
+.avatar-1 {
+  margin-right: -4.375rem;
+  z-index: 9999;
+}
+
+.avatar-2 {
+  margin-right: -4.375rem;
+  z-index: 2;
+}
+
+.avatar-3 {
+  z-index: 1;
+}
+
+.avatar-4 {
+  margin-left: -4.375rem;
+}
+
+/* estilo do texto de callback dos avatares */
+.callback-avatares {
+  margin-right: 0px;
+  font-weight: 700;
+  font-size: var(--size-4);
+  line-height: 1.375;
+  margin-left: 0.625rem;
+  margin-top: 2.5rem;
+}
+
+.callback-avatares span {
+  margin: 0;
+  display: block;
+}
+
+.callback-avatares a {
+  font-weight: normal;
+  font-size: 1.125rem;
+  padding: 0.4rem 0;
+}
+
+.callback-avatares a:hover {
+  color: var(--color-2);
+}
+
+/* retirando a imagem da marca pois eram
+   totalmente de caráter decorativo 
+   então tiramos ela para facilitar o 
+   desenvolvimento do layout responsivo */
+@media (max-width: 62.5rem) {
+  .intro-start-img {
+    display: none;
+  }
+}
+
+/*  começa o estilo responsivo da intro
+    onde ocrre a troca para uma coluna
+    e é efeito os novos posicionamentos
+    da box de conteúdo */
+@media (max-width: 50rem) {
+  .intro-start-text {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem 0;
+  }
+
+  .intro-start-text-box-2 {
+    grid-row: 1;
+  }
+
+  .intro-start-text div > p {
+    padding-bottom: 2rem;
+  }
+
+  .callback-avatares {
+    margin-left: 3.75rem;
+  }
+
+  .callback-avatares {
+    margin-left: 0.5rem;
+  }
+}
+
+/* diminuição do tamanho do titulo */
+@media (max-width: 37.5rem) {
+  .intro-start-text h1 {
+    font-size: var(--size-8);
+  }
+}
